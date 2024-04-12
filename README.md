@@ -25,7 +25,9 @@ Leverage OpenAI GPT API or similar pre-trained LLMs to generate succinct descrip
     ```
 
 2. **Run the Application:** Execute the provided Streamlit application.
-
+    ```bash
+    python -m streamlit run app.py
+    ```
 3. **Input URL:** Enter the URL of the webpage containing product details.
 
 4. **Process URL:** Click the button to initiate the web scraping and description generation process.
