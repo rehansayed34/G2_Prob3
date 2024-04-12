@@ -7,28 +7,27 @@ Automate the process of updating product descriptions on websites with the help 
 ## Approach
 
 ### Web Scraping:
-Utilize Python with BeautifulSoup or Scrapy to extract product details from URLs.
+Utilize Python with BeautifulSoup to extract product details from URLs.
 
 ### LLM APIs:
 Leverage OpenAI GPT API or similar pre-trained LLMs to generate succinct descriptions directly from the extracted content.
 
-### Search API Integration:
-Enhance the accuracy of descriptions by integrating external data through APIs such as Google Custom Search API or similar services.
-
 ## Tech Stack
 
-- **Web Scraping:** Python with BeautifulSoup or Scrapy
+- **Web Scraping:** Python with BeautifulSoup4
 - **LLM APIs:** OpenAI GPT API or similar
-- **Search API:** Google Custom Search API or similar
 
 ## Usage
 
 1. **Install Dependencies:** Ensure required libraries are installed.
-2. **Run Web Scraping Script:** Execute the web scraping script to extract product details from provided URLs.
-3. **Generate Descriptions:** Utilize LLM APIs to generate concise descriptions based on the extracted content.
-4. **Optional Integration:** Integrate a search API for enhanced accuracy in descriptions.
+    ```bash
+    pip install streamlit==0.89.0 beautifulsoup4==4.10.0
+    ```
 
-## License
+2. **Run the Application:** Execute the provided Streamlit application.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+3. **Input URL:** Enter the URL of the webpage containing product details.
 
+4. **Process URL:** Click the button to initiate the web scraping and description generation process.
+
+5. **View Generated Description:** The generated product description will be displayed.
