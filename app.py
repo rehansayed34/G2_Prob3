@@ -47,13 +47,22 @@ def process_url(url):
     else:
        
         print("Failed to retrieve the webpage")
-    genai.configure(api_key='AIzaSyB6GypDXF3xZFQrbgx9G3uKRSIR0EAmj_8')
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+    genai.configure(api_key=GOOGLE_API_KEY)
+   
 
 # Initialize the Generative Model
     model = genai.GenerativeModel('gemini-pro')
-    prompt="""I am giving you the data scrapped from a website that describes it's services ,the data is structured in the following way ({h1:" " ,h2:" ",p:" " ,li:" "}) i want you to go through it can understand what exactly the product does and give a short description for that i can use for ecommerce website,the output format should be "Product Name:\nProduct Description"keep product name and description in seperate paras.Talk more about the usefulness of the product. Keep it 150 words at max.The data is as follows ","""  # replace {text} with the text you want to translate
+    prompt="""Given the structured data containing descriptions of services from a website ({h1:" " ,h2:" ",p:" " ,li:" "}), generate short descriptions for each product that can be used for an ecommerce website. Some example outputs are given below:
+        Product Description:ChatRecruit™ is the leading post-application chat management platform that empowers recruiting and hiring teams to streamline communication and enhance the candidate experience. With its intuitive interface and secure platform, it enables recruiters to seamlessly bridge the communication gap from the initial application stage to onboarding. ChatRecruit™ seamlessly integrates with leading ATS, CRM, and VMS systems, eliminating siloed systems and streamlining communication flows. By providing tailored communication solutions for complex brands, it helps organizations reduce the risk of losing top talent and improve recruitment velocity.
+       
+        Product Description:Litzia Managed IT Services offers a comprehensive suite of solutions to help businesses navigate the complexities of modern technology. With a dedicated tech support staff available Monday through Friday, businesses can access expert guidance and support whenever they need it. Litzia's proactive monitoring tools provide network protection, uptime, and critical maintenance, ensuring minimal downtime and maximum productivity. Whether it's network implementation and maintenance, vendor management, or Virtual Chief Information Officer (VCIO) services, Litzia tailors its offerings to meet the unique needs of each business. By partnering with Litzia, businesses can leverage technology to increase efficiency, optimize operations, and achieve their strategic goals.
+       
+        Product Description:
+Aim Agency, a renowned London-based PR agency, offers bespoke PR solutions tailored to elevate the profiles, refine the messaging, and expand the reach of its clientele. With a strategic approach to each brief, Aim Agency meticulously determines the most potent communication channels and PR messages to effectively engage target audiences. The agency's expertise spans a wide range of industries, catering to CEOs, senior executives, founders, entrepreneurs, and high-net-worth individuals, ensuring the tailored delivery of impactful PR campaigns. By leveraging Aim Agency's services, clients gain access to a team of experienced professionals dedicated to enhancing their visibility, establishing a strong brand identity, and driving meaningful connections with their target audiences.
+        give each product description, highlighting its key features and benefits in approximately 150 words.the input is as follows: """  # replace {text} with the text you want to translate
  
-
+    print(extracted_text)
     request=prompt+str(extracted_text)
     # Generate content
     response = model.generate_content(request)
@@ -79,3 +88,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#
