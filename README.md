@@ -1,19 +1,35 @@
-Automated Product Description Generation
-Simplify product description updates on websites with automated web scraping and Large Language Model (LLM) APIs.
+# Automated Product Description Generation
 
-Overview
-This project automates the creation of accurate product descriptions. By scraping product details from provided URLs and leveraging pre-trained LLMs through their APIs, we generate concise descriptions directly from the extracted content.
+## Overview
 
-Approach
-Web Scraping: Extract product details from URLs.
-LLM APIs: Generate succinct descriptions.
-Search API Integration: Enhance accuracy with external data.
-Tech Stack
-Web Scraping: Python with BeautifulSoup or Scrapy
-LLM APIs: OpenAI GPT API or similar
-Search API: Google Custom Search API or similar
-Usage
-Install dependencies.
-Run the web scraping script.
-Generate descriptions using LLM APIs.
-Optionally, integrate a search API for more accurate descriptions.
+Automate the process of updating product descriptions on websites with the help of web scraping and Large Language Model (LLM) APIs. This project streamlines the creation of accurate and concise product descriptions by extracting information from provided URLs and utilizing pre-trained LLMs via their APIs.
+
+## Approach
+
+### Web Scraping:
+Utilize Python with BeautifulSoup to extract product details from URLs.
+
+### LLM APIs:
+Leverage OpenAI GPT API or similar pre-trained LLMs to generate succinct descriptions directly from the extracted content.
+
+## Tech Stack
+
+- **Web Scraping:** Python with BeautifulSoup4
+- **LLM APIs:** OpenAI GPT API or similar
+
+## Usage
+
+1. **Install Dependencies:** Ensure required libraries are installed.
+    ```bash
+    pip install streamlit==0.89.0 beautifulsoup4==4.10.0
+    ```
+
+2. **Run the Application:** Execute the provided Streamlit application.
+    ```bash
+    python -m streamlit run app.py
+    ```
+3. **Input URL:** Enter the URL of the webpage containing product details.
+
+4. **Process URL:** Click the button to initiate the web scraping and description generation process.
+
+5. **View Generated Description:** The generated product description will be displayed.
